@@ -8,6 +8,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local gfs = require("gears.filesystem")
 require("Sources.Widgets.work_layout.layoutWidget")
+local user_var = require("Sources.Main.user_var")
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/tasklist/tasklistWidget.lua")
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/taglist/taglistWidget.lua")
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/launcher/launcherWidget.lua")
@@ -15,6 +16,7 @@ dofile(gfs.get_configuration_dir() .. "Sources/Widgets/keyboard_layout/kl.lua")
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/time/timeWidget.lua")
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/systray/systrayWidget.lua")
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/prompt/promptWidget.lua")
+dofile(gfs.get_configuration_dir() .. "Sources/Main/user_var.lua")
 
 local function set_wallpaper(s)
     -- Wallpaper
@@ -202,11 +204,11 @@ awful.screen.connect_for_each_screen(function(s)
                     battery_widget({
                         font = "Play 7",
                         timeout = 10,
-                        notification_position = "bottom_right",
+                        notification_position = "top_left",
                         show_current_level = false,
-                        --warning_msg_title = "",
-                        --warning_msg_text = "",
-                        --warning_msg_icon = "",
+                        warning_msg_title = "Charge Now !!!",
+                        warning_msg_text = "Battery have to eat too.",
+                        warning_msg_icon = user_var.charge_required,
                     }),
                     s.mytextclock,
                     s.mytextclock:connect_signal("button::press",

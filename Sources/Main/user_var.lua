@@ -9,6 +9,7 @@ local _M = {
 	-- Mod key (win in my case)
 	modkey = "Mod4",
 	-- Icons
+	charge_required = gfs.get_configuration_dir().."Pictures/Icons/status/battery-caution-symbolic.svg",
 	shutdown_icon = gfs.get_configuration_dir().."Pictures/Icons/system-shutdown.svg",
 	reboot_icon = gfs.get_configuration_dir().."Pictures/Icons/system-reboot.svg",
 	quit_icon = gfs.get_configuration_dir().."Pictures/Icons/system-log-out.svg",
