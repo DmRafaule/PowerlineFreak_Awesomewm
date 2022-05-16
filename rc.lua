@@ -24,8 +24,6 @@ require("Sources.Main.signals")
 require("Sources.Decorations.panel_powerline")
 -- Add config for rules
 require("Sources.Main.rules")
--- Add desktop support
-require("Sources.Decorations.desktop")
 
 beautiful.init(gears.filesystem.get_configuration_dir().."Sources/Decorations/theme.lua")
 

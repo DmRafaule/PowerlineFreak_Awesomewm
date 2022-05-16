@@ -14,7 +14,6 @@ dofile(gfs.get_configuration_dir() .. "Sources/Widgets/launcher/launcherWidget.l
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/keyboard_layout/kl.lua")
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/time/timeWidget.lua")
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/systray/systrayWidget.lua")
-dofile(gfs.get_configuration_dir() .. "Sources/Widgets/separator/separatorWidget.lua")
 dofile(gfs.get_configuration_dir() .. "Sources/Widgets/prompt/promptWidget.lua")
 
 local function set_wallpaper(s)
@@ -36,7 +35,6 @@ screen.connect_signal("property::geometry", set_wallpaper)
 local arrow = gears.shape.transform(gears.shape.powerline) 
     : scale(-1,1)
         : translate(-20,0)
-local right_arrow_W
 -- BATTERY WIDGET
 local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 -- CALENDAR WIDGET
