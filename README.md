@@ -1,41 +1,19 @@
 # Fork-AwesomeWM
 
 This is a my custom config for awesome wm. 
-📦Sources
- ┣ 📂Bindings
- ┃ ┗ 📜keybindings.lua
- ┣ 📂Decorations
- ┃ ┣ 📜panel_powerline.lua
- ┃ ┣ 📜theme.lua
- ┃ ┗ 📜windowbar.lua
- ┣ 📂Main
- ┃ ┣ 📜errorHandler.lua
- ┃ ┣ 📜rules.lua
- ┃ ┣ 📜signals.lua
- ┃ ┗ 📜user_var.lua
- ┗ 📂Widgets
- ┃ ┣ 📂charge
- ┃ ┃ ┗ 📜battery.lua
- ┃ ┣ 📂keyboard_layout
- ┃ ┃ ┣ 📜init.lua
- ┃ ┃ ┣ 📜kbdcfg.lua
- ┃ ┃ ┗ 📜kl.lua
- ┃ ┣ 📂launcher
- ┃ ┃ ┗ 📜launcherWidget.lua
- ┃ ┣ 📂prompt
- ┃ ┃ ┗ 📜promptWidget.lua
- ┃ ┣ 📂systray
- ┃ ┃ ┗ 📜systrayWidget.lua
- ┃ ┣ 📂taglist
- ┃ ┃ ┗ 📜taglistWidget.lua
- ┃ ┣ 📂tasklist
- ┃ ┃ ┗ 📜tasklistWidget.lua
- ┃ ┣ 📂time
- ┃ ┃ ┗ 📜timeWidget.lua
- ┃ ┣ 📂volume
- ┃ ┃ ┗ 📜main.lua
- ┃ ┗ 📂work_layout
- ┃   ┗ 📜layoutWidget.lua
+* external_folder <- *Not mine. Others projects*
+* external_folder
+* external_folder
+* Pictures
+    * Icons
+    * Wallpapers
+* Sources
+    * Bindings <- *Key/Mouse bindings*
+    * Decorations <- *For decorating*
+    * Main <- *Some common configs files*
+    * Widgets <- *All used widgets*
+* rc.lua <- *Main*
+* README.md <- *This file*
 
 ## Dependencies
 In all cases it will be for widgets
@@ -48,7 +26,7 @@ In all cases it will be for widgets
 ### Widgets/prompt 
 * None
 ### Widgets/systray
-* None *For now it's not flexible. Rework required*
+* None *I can't figure out how to make icons with transparent background. Rework required*
 ### Widgets/taglist
 * None
 ### Widgets/tasklist
@@ -70,4 +48,5 @@ Such as
 ### calender
 * None
 
-For now desktop is not supported. But 
+For now desktop is not supported.
+For now right arrow section not flexible at all. Any changes will breake all of those lines. *Rework required*
