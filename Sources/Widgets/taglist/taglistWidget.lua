@@ -48,11 +48,11 @@ awful.screen.connect_for_each_screen(function(s)
     filter  = awful.widget.taglist.filter.all,
     style   = {
         shape = gears.shape.powerline,
-        bg_focus = "#8070D8",
-        bg_volatile = "#3B2E84",
-        bg_empty = "#3B2E84",
-        bg_urgent = "#3B2E84",
-        bg_occupied = "#3B2E84",
+        bg_focus = user_var.taglist_s,
+        bg_volatile = user_var.taglist_ns,
+        bg_empty = user_var.taglist_ns,
+        bg_urgent = user_var.taglist_ns,
+        bg_occupied = user_var.taglist_ns,
     },
     layout   = {
         spacing = -20,

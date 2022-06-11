@@ -22,12 +22,6 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
-    --{ rule = { class = "kitty",  },
-    --  properties = { 
-    --      floating = true,
-    --      callback = function(c) awful.placement.centered(c) end,
-    --  },
-    --},
     -- Floating clients.
     { rule_any = {
         instance = {

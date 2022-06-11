@@ -3,6 +3,7 @@ local naughty = require("naughty")
 local wibox = require("wibox")
 local io    = require("io")
 local gears = require("gears")
+local user_var = require("Sources.Main.user_var")
 
 
 -- For filling up list by all programm and sripts in system using $PATH env var
@@ -59,9 +60,9 @@ awful.screen.connect_for_each_screen(function (s)
         width = min_width,
         height = 25,
         border_width = 0,
-        border_color = "#8070d9",
-        bg = "#8060FF90",
-        fg = "#000000",
+        border_color = user_var.runprmpt_choise_brd,
+        bg = user_var.runprmpt_choise_bg,
+        fg = user_var.runprmpt_choise_f,
         ontop = true,
         shape = function (cr,width,height)
           gears.shape.powerline(cr,width,height)
@@ -78,9 +79,9 @@ awful.screen.connect_for_each_screen(function (s)
       width = 60,
       height = 25,
       border_width = 0,
-      border_color = "#8070d9",
-      bg = "#ef3c7b90",
-      fg = "#000000",
+      border_color = user_var.runprmpt_counter_brd,
+      bg = user_var.runprmpt_counter_b,
+      fg = user_var.runprmpt_counter_f,
       ontop = true,
       shape = function (cr,width,height)
         gears.shape.powerline(cr,width,height)
@@ -90,8 +91,8 @@ awful.screen.connect_for_each_screen(function (s)
     })
     s.mypromptbox = awful.widget.prompt({ -- Move to Widgets
         prompt = '<b>>>||</b>',
-        bg_cursor = "#fff",
-        fg = "#000000",
+        bg_cursor = user_var.runprmpt_cursor,
+        fg = user_var.runprmpt_f,
         autoexec = true,
         -- Calls when hit esc
         done_callback = function ()
@@ -126,9 +127,9 @@ awful.screen.connect_for_each_screen(function (s)
                   wib.visible = true
                   wib.widget.markup = "\t<b>"..list[i].."</b>"
                   if (i == counter) then
-                    wib.bg = "#7BC9E5"
+                    wib.bg = user_var.runprmpt_choise_s
                   else
-                    wib.bg = "#8060FF90"
+                    wib.bg = user_var.runprmpt_choise_ns
                   end
               -- If we have some unneeded wiboxes we will not display them
               else
@@ -139,7 +140,7 @@ awful.screen.connect_for_each_screen(function (s)
                 -- Make a shift
                 wib.widget.markup = "\t<b>"..list[i+shift].."</b>"
                 -- Just mark a last one for sure.
-                prompt_wibox_table[#prompt_wibox_table].bg = "#7BC9E5"
+                prompt_wibox_table[#prompt_wibox_table].bg = user_var.runprmpt_choise_s
               end
               -- Set position for counter
               if i <= #list then

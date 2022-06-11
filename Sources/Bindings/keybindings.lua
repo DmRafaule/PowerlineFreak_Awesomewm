@@ -125,9 +125,7 @@ globalkeys = gears.table.join(
           end
         end)
       end,
-      {description = "run prompt", group = "launcher"}
-    )
-
+      {description = "run prompt", group = "launcher"})
 )
 
 clientkeys = gears.table.join(

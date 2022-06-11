@@ -10,4 +10,5 @@ awful.screen.connect_for_each_screen(function(s)
 	  format = "  %d.%m.%H:%M",
 	  widget = wibox.widget.textclock()
 	}
+	s.istextclockToggled = false
 end)

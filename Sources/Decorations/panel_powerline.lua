@@ -1,4 +1,5 @@
 -- Standard awesome library
+local base = require("wibox.widget.base")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
@@ -76,7 +77,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.main_wibox = awful.wibar({
         position = "bottom", 
         screen = s,
-        bg = "#27222e" .. "0",
+        bg = user_var.wibox_b,
     })
     s.main_wibox:setup {
         -- left widgets
@@ -103,14 +104,12 @@ awful.screen.connect_for_each_screen(function(s)
                         markup = "<b></b>",
                         widget = s.mytasklist
                     },
-                    bg     = "#8070D8",
                     shape = gears.shape.powerline,
                     widget = wibox.container.background
                 },
                 left   = -10,
                 layout = wibox.container.margin
             },
-            
             layout = wibox.layout.fixed.horizontal,
         },
         -- place holder
@@ -121,17 +120,15 @@ awful.screen.connect_for_each_screen(function(s)
         {
             -- first arrow
             wibox.widget{
-                bg     = "#8070D8",
                 shape = gears.shape.powerline,
                 widget = wibox.container.background,
                 resize = true,
-                
             },
             -- systray
             s.mysystray,
             spacing = 20,
             spacing_widget = {
-                color  = '#7A45D6',
+                color  = user_var.first_arrow,
                 shape  = arrow,
                 widget = wibox.widget.separator,
             },
@@ -144,7 +141,7 @@ awful.screen.connect_for_each_screen(function(s)
                             markup = "<b></b>",
                             widget = wibox.widget.textbox
                         },
-                        bg     = "#EF3C7B",
+                        bg     = user_var.layout_b,
                         shape = function(cr, width, height) 
                             gears.shape.rectangular_tag(cr, width, height, 10) 
                         end,
@@ -159,7 +156,7 @@ awful.screen.connect_for_each_screen(function(s)
                             markup = "<b></b>",
                             widget = wibox.widget.textbox
                         },
-                        bg     = "#9702A7",
+                        bg     = user_var.widget_b,
                         shape = gears.shape.transform(gears.shape.powerline) 
                         : scale(-1,1)
                             : translate(-360,0),
@@ -174,7 +171,7 @@ awful.screen.connect_for_each_screen(function(s)
                             markup = "<b></b>",
                             widget = wibox.widget.textbox
                         },
-                        bg     = "#2F0571",
+                        bg     = user_var.time_b,
                         shape = gears.shape.transform(gears.shape.powerline) 
                         : scale(-1,1)
                             : translate(-480,0),
@@ -213,7 +210,15 @@ awful.screen.connect_for_each_screen(function(s)
                     s.mytextclock,
                     s.mytextclock:connect_signal("button::press",
                         function(_, _, _, button)
-                            if button == 1 then cw.toggle() end
+                            if button == 1 then 
+                                if s.istextclockToggled == false then
+                                    s.istextclockToggled = true
+                                    awful.spawn.with_shell("kitty calcurse") 
+                                else
+                                    s.istextclockToggled = false
+                                    awful.spawn.with_shell("kill -9 $( pidof calcurse)")
+                                end
+                            end
                         end),
                     s.mylayoutbox,
                     layout = wibox.layout.fixed.horizontal,
@@ -228,13 +233,13 @@ awful.screen.connect_for_each_screen(function(s)
     -- This is a reinvented dmenu(a simplier one)
     s.prompt_wibox = wibox({
       x = -25,
-      y = 0, --s.workarea.height - s.main_wibox.height,
+      y = s.workarea.height - s.main_wibox.height,
       visible = false,
       width = 200,
       height = s.main_wibox.height,
       border_width = 0,
-      border_color = "#8070d9",
-      bg = "#8060FF",
+      border_color = user_var.runprmpt_brd,
+      bg = user_var.runprmpt_bg,
       ontop = true,
       shape = function (cr,width,height)
           gears.shape.powerline(cr,width,height)
@@ -242,6 +247,5 @@ awful.screen.connect_for_each_screen(function(s)
       screen = s,
       widget = s.mypromptbox
     })
-    s.prompt_wibox_table = {}
 end)
 -- }}}

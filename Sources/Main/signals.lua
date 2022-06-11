@@ -1,4 +1,5 @@
 local awful = require("awful")
+local gears = require("gears")
 require("awful.autofocus")
 -- Theme handling library
 local beautiful = require("beautiful")
@@ -17,8 +18,10 @@ client.connect_signal("manage", function (c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+    --c.shape = function (cr,width,height)
+    --    gears.shape.rounded_rect(cr,width,height,20)
+    --end
 end)
-
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)

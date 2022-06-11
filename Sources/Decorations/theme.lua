@@ -17,7 +17,7 @@ local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets' generators for this theme
 
 
-theme.font          = "sans 12"
+theme.font          = user_var.font
 
 
 theme.bg_normal     = xrdb.background
@@ -32,37 +32,25 @@ theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.bg_normal
 
 theme.useless_gap   = dpi(3)
-theme.border_width  = dpi(0)
-theme.border_normal = xrdb.color0
-theme.border_focus  = theme.bg_focus
+theme.border_width  = dpi(4)
+theme.border_normal = user_var.wibox_ns
+theme.border_focus  = user_var.wibox_s
 theme.border_marked = xrdb.color10
 
--- There are other variable sets
--- overriding the default one when
--- defined, the sets are:
--- taglist_[bg|fg]_[focus|urgent|occupied|empty|volatile]
--- tasklist_[bg|fg]_[focus|urgent]
--- titlebar_[bg|fg]_[normal|focus]
--- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- mouse_finder_[color|timeout|animate_timeout|radius|factor]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
+theme.tasklist_bg_normal    = user_var.tasker_bg_normal
+theme.tasklist_fg_normal 	= user_var.tasker_fg_normal
+theme.tasklist_fg_focus 	= user_var.tasker_fg_focus
+theme.tasklist_bg_focus 	= user_var.tasker_bg_focus
+theme.tasklist_fg_minimize 	= user_var.tasker_fg_minimize
+theme.tasklist_bg_minimize  = user_var.tasker_bg_minimize
 
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
-theme.prompt_bg = "#00000000"
+theme.prompt_bg = user_var.runprmpt_bg
 
--- Variables set for theming the menu:
--- menu_[bg|fg]_[normal|focus]
--- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(26)
 theme.menu_width  = dpi(100)
-
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
 
 -- Recolor Layout icons:
 theme = theme_assets.recolor_layout(theme, theme.fg_normal)
@@ -126,7 +114,7 @@ end
 theme.wallpaper = function(s)
     return theme_assets.wallpaper(wallpaper_bg, wallpaper_fg, wallpaper_alt_fg, s)
 end
-theme.wallpaper = user_var.night_wallpaper
+theme.wallpaper = user_var.current_wallpaper
 
 theme.layout_spiral         = user_var.work_layout_spiral        
 theme.layout_dwindle        = user_var.work_layout_dwindle       
@@ -150,15 +138,10 @@ theme.layout_max            = user_var.work_layout_max
 theme.notification_shape = function(cr, width, height) 
     gears.shape.rounded_rect(cr, width, height,15) 
 end
-theme.notification_border_color = "#8070D8"
+theme.notification_border_color = user_var.notif_brd
 theme.notification_border_width = 0
 theme.notification_margin = 10
-theme.notification_bg = "#31196160"
-
-
-
-
-
+theme.notification_bg = user_var.notif_b
 
 
 return theme

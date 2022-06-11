@@ -13,8 +13,10 @@ local _M = {
 	shutdown_icon = gfs.get_configuration_dir().."Pictures/Icons/system-shutdown.svg",
 	reboot_icon = gfs.get_configuration_dir().."Pictures/Icons/system-reboot.svg",
 	quit_icon = gfs.get_configuration_dir().."Pictures/Icons/system-log-out.svg",
-	ru_layout_icon = gfs.get_configuration_dir().."Pictures/Icons//ru.png",
-	us_layout_icon = gfs.get_configuration_dir().."Pictures/Icons//us.png",
+	ru_layout_icon = gfs.get_configuration_dir().."Pictures/Icons/ru.png",
+	us_layout_icon = gfs.get_configuration_dir().."Pictures/Icons/us.png",
+	minus = gfs.get_configuration_dir().."Pictures/Icons/minus.svg",
+	plus  = gfs.get_configuration_dir().."Pictures/Icons/plus.svg",
 	-- Work layout
 	work_layout_spiral = gfs.get_configuration_dir().. "Pictures/Icons/spiral.png",
 	work_layout_dwindle = gfs.get_configuration_dir().. "Pictures/Icons/dwindle.png",
@@ -33,8 +35,47 @@ local _M = {
 	work_layout_tile = gfs.get_configuration_dir().. "Pictures/Icons/tile.png",
 	work_layout_max = gfs.get_configuration_dir().. "Pictures/Icons/max.png",
 	-- Wallpapers
-	hex_wallpaper = gfs.get_configuration_dir().. "Pictures/Wallpapers/minimalist-abstract-hexagon-colorful-a1949.jpg",
-	night_wallpaper = gfs.get_configuration_dir().. "Pictures/Wallpapers/snow-mountain-night-landscape-minimalist-minimalism-y739.jpg",
-	teahub_wallpaper = gfs.get_configuration_dir().. "Pictures/Wallpapers/teahub.io-landscape-wallpaper-12770.png",
+	current_wallpaper = gfs.get_configuration_dir().. "Pictures/Wallpapers/21.jpg",
+	-- Font 
+	font = "Sans 12",
+	-- Colors
+	-- Wibar
+	wibox_b = "#27222e00",
+	-- Taglisty
+	taglist_s = "#8070D8",
+	taglist_ns = "#3B2E84",
+	-- Runprompt
+	runprmpt_bg = "#8060FF",
+	runprmpt_brd = "#8070d9",
+	runprmpt_choise_brd = "#8070d9",
+	runprmpt_choise_bg = "#8060FF90",
+	runprmpt_choise_f = "#000000",
+	runprmpt_choise_s = "#7BC9E5",
+	runprmpt_choise_ns = "#8060FF90",
+	runprmpt_counter_b = "#ef3c7b90",
+	runprmpt_counter_f = "#000000",
+	runprmpt_counter_brd = "#8070d9",
+	runprmpt_f = "#000000",
+	runprmpt_cursor = "#fff",
+	-- Tasklist
+	tasker_brd 			= '#7A45D6',
+	tasker_separator 	= "#7A45D6",
+	tasker_bg_normal    = "#8070D8",
+	tasker_fg_normal 	= "#000000",
+	tasker_fg_focus 	= "#000000",
+	tasker_bg_focus 	= "#6990D8",
+	tasker_fg_minimize 	= "#ffffff9f",
+	tasker_bg_minimize  = "#ffffff1f",
+	-- Wiboxes
+	wibox_ns = '#3B2E84',
+	wibox_s  = '#8070D8',
+	-- Notifications
+	notif_b = "#31196160",
+	notif_brd = "#8070D8",
+	-- Widgets
+	first_arrow = "#8070D8",
+	layout_b  = "#EF3C7B",
+	widget_b  = "#9702A7",
+	time_b    = "#2F0571"
 }
 return _M
