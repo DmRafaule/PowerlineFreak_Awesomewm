@@ -8,6 +8,32 @@ local user_var = require("Sources.Main.user_var")
 
 local widget = wibox.widget({
     {
+        -- arrow after gap
+        {
+            {
+                markup = '<b></b>',
+                widget = wibox.widget.textbox
+            },
+            bg = user_var.layout_b,
+            shape = gears.shape.transform(gears.shape.powerline) 
+                        : scale(-1,1)
+                            : translate(-20,0),
+            forced_width = 20,
+            widget = wibox.container.background
+        },
+        -- gap 
+        {
+            {
+                markup = '<b></b>',
+                widget = wibox.widget.textbox
+            },
+            bg = user_var.layout_b..'00',
+            shape = gears.shape.transform(gears.shape.powerline) 
+                        : scale(-1,1)
+                            : translate(-45,0),
+            forced_width = 45,
+            widget = wibox.container.background
+        },
         {
             {
                 {

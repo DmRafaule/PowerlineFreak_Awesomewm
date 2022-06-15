@@ -101,7 +101,7 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
     })
     s.rightwibar = wibox.widget({
-        -- line after gap
+        -- arrow after gap
         {
             {
                 markup = '<b></b>',
@@ -109,7 +109,20 @@ awful.screen.connect_for_each_screen(function(s)
             },
             bg = user_var.layout_b,
             shape = gears.shape.transform(gears.shape.powerline) 
-                        : scale(-0.5,1)
+                        : scale(-1,1)
+                            : translate(-20,0),
+            forced_width = 20,
+            widget = wibox.container.background
+        },
+        -- gap between systray and arrow
+        {
+            {
+                markup = '<b></b>',
+                widget = wibox.widget.textbox
+            },
+            bg = user_var.layout_b..'00',
+            shape = gears.shape.transform(gears.shape.powerline) 
+                        : scale(-1,1)
                             : translate(-35,0),
             forced_width = 35,
             widget = wibox.container.background

@@ -49,4 +49,3 @@ Such as
 * None
 
 For now desktop is not supported.
-For now right arrow section not flexible at all. Any changes will breake all of those lines. *Rework required*
