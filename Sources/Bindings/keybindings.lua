@@ -78,11 +78,15 @@ globalkeys = gears.table.join(
       {description= "showup wibar menu",group = "client"}),
     awful.key({modkey},           "Tab",
       function ()
-        if sys_actions.visible then
-          sys_actions.visible = false
-        else
-          sys_actions.visible = true
-        end
+        awful.screen.connect_for_each_screen(function (s)
+          if (s.mainmenu.visible) then
+            s.mainmenu.visible = false
+            s.rightwibar.visible = true
+          else
+            s.mainmenu.visible = true
+            s.rightwibar.visible = false
+          end
+        end)
       end,
       {description = "Open main launcher", group = "launcher"}
     ),
@@ -93,7 +97,7 @@ globalkeys = gears.table.join(
               {description = "open a code editor", group = "launcher"}),              
     awful.key({ modkey,           }, "b", function () awful.spawn(user_var.browser) end,
               {description = "open a default browser", group = "launcher"}),
-    awful.key({ modkey,           }, "m", function () awful.spawn(user_var.fm) end,
+    awful.key({ modkey,           }, "m", function () awful.spawn.with_shell("kitty "..user_var.fm) end,
               {description = "open a file manager", group = "launcher"}),
     awful.key({ }, "Print", function () awful.util.spawn("flameshot gui") end),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
@@ -118,8 +122,10 @@ globalkeys = gears.table.join(
       function()
         awful.screen.connect_for_each_screen(function (s)
           if s.prompt_wibox.visible then
+            s.leftwibar.visible = true
             s.prompt_wibox.visible = false
           else
+            s.leftwibar.visible = false
             s.prompt_wibox.visible = true
             s.prompt_wibox.widget:run()
           end

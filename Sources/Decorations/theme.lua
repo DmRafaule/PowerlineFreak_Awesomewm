@@ -31,8 +31,8 @@ theme.fg_focus      = theme.bg_normal
 theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.bg_normal
 
-theme.useless_gap   = dpi(3)
-theme.border_width  = dpi(4)
+theme.useless_gap   = dpi(5)
+theme.border_width  = dpi(2)
 theme.border_normal = user_var.wibox_ns
 theme.border_focus  = user_var.wibox_s
 theme.border_marked = xrdb.color10

@@ -3,7 +3,7 @@ local home = os.getenv("HOME")
 local _M = {
 	-- Default applications
 	browser = "firefox",
-	fm = "thunar",
+	fm = "rang",
 	editor = "code",
 	terminal = "kitty",
 	-- Mod key (win in my case)
@@ -17,6 +17,9 @@ local _M = {
 	us_layout_icon = gfs.get_configuration_dir().."Pictures/Icons/us.png",
 	minus = gfs.get_configuration_dir().."Pictures/Icons/minus.svg",
 	plus  = gfs.get_configuration_dir().."Pictures/Icons/plus.svg",
+	apps  = gfs.get_configuration_dir().."Pictures/Icons/apps.png",
+	settings = gfs.get_configuration_dir().."Pictures/Icons/settings.png",
+	arch = gfs.get_configuration_dir().."Pictures/Icons/arch.svg",
 	-- Work layout
 	work_layout_spiral = gfs.get_configuration_dir().. "Pictures/Icons/spiral.png",
 	work_layout_dwindle = gfs.get_configuration_dir().. "Pictures/Icons/dwindle.png",
@@ -35,7 +38,7 @@ local _M = {
 	work_layout_tile = gfs.get_configuration_dir().. "Pictures/Icons/tile.png",
 	work_layout_max = gfs.get_configuration_dir().. "Pictures/Icons/max.png",
 	-- Wallpapers
-	current_wallpaper = gfs.get_configuration_dir().. "Pictures/Wallpapers/21.jpg",
+	current_wallpaper = gfs.get_configuration_dir().. "Pictures/Wallpapers/minimalism/12.jpg",
 	-- Font 
 	font = "Sans 12",
 	-- Colors
@@ -75,7 +78,13 @@ local _M = {
 	-- Widgets
 	first_arrow = "#8070D8",
 	layout_b  = "#EF3C7B",
+	layout_b_hovered = '#ab0a32',
 	widget_b  = "#9702A7",
-	time_b    = "#2F0571"
+	widget_b_hovered = "#45034d",
+	time_b    = "#2F0571",
+	time_b_hovered = "#1e0545",
+	-- Main menu widget
+	mm_b = "#20212459",
+	mm_brd = "#8070d9",
 }
 return _M

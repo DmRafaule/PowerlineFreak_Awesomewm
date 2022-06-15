@@ -28,7 +28,6 @@ require("Sources.Decorations.panel_powerline")
 -- Add config for rules
 require("Sources.Main.rules")
 
-beautiful.init(gears.filesystem.get_configuration_dir().."Sources/Decorations/theme.lua")
 
 awful.spawn.with_shell("kill -9 $( pidof xbindkeys) ; xbindkeys -p")
 --awful.spawn.with_shell("picom --corner-radius 0 --shadow-opacity 0 --vsync --unredir-if-possible --backend glx --glx-no-stencil --xrender-sync-fence -b")

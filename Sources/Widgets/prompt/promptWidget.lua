@@ -4,7 +4,9 @@ local wibox = require("wibox")
 local io    = require("io")
 local gears = require("gears")
 local user_var = require("Sources.Main.user_var")
+local beautiful = require("beautiful")
 
+beautiful.init(gears.filesystem.get_configuration_dir().."Sources/Decorations/theme.lua")
 
 -- For filling up list by all programm and sripts in system using $PATH env var
 local function getAvailProg() 
@@ -58,6 +60,7 @@ awful.screen.connect_for_each_screen(function (s)
         y = 0,
         visible = false,
         width = min_width,
+        font = user_var.font,
         height = 25,
         border_width = 0,
         border_color = user_var.runprmpt_choise_brd,
@@ -76,6 +79,7 @@ awful.screen.connect_for_each_screen(function (s)
       x = 0,
       y = 0,
       visible = false,
+      font = user_var.font,
       width = 60,
       height = 25,
       border_width = 0,
@@ -100,7 +104,9 @@ awful.screen.connect_for_each_screen(function (s)
               wib.visible = false
             end
             w_counter.visible = false
+            -- Switch tasklist and taglist to runprompt and backwards
             s.prompt_wibox.visible = false
+            s.leftwibar.visible = true
         end,
         keypressed_callback = function (mod,key,command)
          
