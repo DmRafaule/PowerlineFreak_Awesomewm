@@ -38,7 +38,7 @@ local _M = {
 	work_layout_tile = gfs.get_configuration_dir().. "Pictures/Icons/tile.png",
 	work_layout_max = gfs.get_configuration_dir().. "Pictures/Icons/max.png",
 	-- Wallpapers
-	current_wallpaper = gfs.get_configuration_dir().. "Pictures/Wallpapers/minimalism/12.jpg",
+	current_wallpaper = gfs.get_configuration_dir().. "Pictures/Wallpapers/minimalism/2.jpg",
 	-- Font 
 	font = "Sans 12",
 	-- Colors

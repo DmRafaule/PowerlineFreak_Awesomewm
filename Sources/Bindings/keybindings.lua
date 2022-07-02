@@ -18,7 +18,7 @@ root.buttons(gears.table.join(
     awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}}
-local amp = '&amp'..string.char(0x3B)
+
 -- {{{ Key bindings
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,

@@ -28,7 +28,6 @@ require("Sources.Decorations.panel_powerline")
 -- Add config for rules
 require("Sources.Main.rules")
 
-
 awful.spawn.with_shell("kill -9 $( pidof xbindkeys) ; xbindkeys -p")
 --awful.spawn.with_shell("picom --corner-radius 0 --shadow-opacity 0 --vsync --unredir-if-possible --backend glx --glx-no-stencil --xrender-sync-fence -b")
 awful.spawn.with_shell("picom --shadow-opacity 0 --corner-radius 0 --vsync --unredir-if-possible") -- --backend xr_glx_hybrid --use-damage --glx-no-stencil
